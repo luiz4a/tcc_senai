@@ -32,8 +32,8 @@ public class Usuario {
 
     @NotNull(message = "Data de nascimento é obrigatória.")
     @Past(message = "Data de nascimento deve ser no passado.")
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    @com.fasterxml.jackson.annotation.JsonFormat(shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @com.fasterxml.jackson.annotation.JsonFormat(shape = com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
 
