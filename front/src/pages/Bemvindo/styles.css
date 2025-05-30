@@ -1,0 +1,66 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.pagina-bemvindo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.video-fundo-bemvindo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.conteudo-bemvindo {
+  z-index: 1;
+  background: rgba(85, 2, 85, 0.116);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgb(250, 247, 247);
+  max-width: 600px;
+}
+
+.conteudo-bemvindo h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.frase-inspiradora {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #ffe5ff;
+  margin-bottom: 30px;
+}
+
+.botao-bemvindo {
+  background: linear-gradient(45deg, #3b0a45, #5a0e5f, #8c1da1, #630563);
+  background-size: 400% 400%;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-position 3s ease, box-shadow 0.3s ease;
+}
+
+.botao-bemvindo:hover {
+  background-position: 100% 0;
+  box-shadow: 0 0 15px 3px #bd37f1;
+}
