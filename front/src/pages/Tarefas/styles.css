@@ -227,3 +227,29 @@
   background: #ede9fe;
   color: #6d28d9;
 }
+
+/* --- Efeitos Hover para Botões (ADICIONADO) --- */
+
+/* Adiciona uma transição suave para todos os botões.
+  Isso faz a mudança de cor ser animada. 
+*/
+.botao-nova,
+.botao-secundario,
+.botao-primario {
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Botão Secundário (branco): 
+  Ao passar o mouse, o fundo fica cinza claro.
+*/
+.botao-secundario:hover {
+  background: #f4f4f4; /* Um cinza bem sutil */
+  border-color: #ccc; /* Escurece a borda também */
+}
+
+/* Botão Primário (roxo claro): 
+  Ao passar o mouse, o fundo fica um tom de roxo um pouco mais escuro.
+*/
+.botao-primario:hover {
+  background: #ddd6fe; /* Um tom mais escuro que o #ede9fe original */
+}
