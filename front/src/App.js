@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PaginaCadastro from './pages/Cadastro';
 import PaginaListaUsuarios from './pages/Lista';
-import PaginaBemVindo from './components/Bemvindo';
+import PaginaBemVindo from './pages/Bemvindo';
 import PaginaTarefa from './pages/Tarefas';
 
 import './App.css'; // Para estilos globais, se necessário
