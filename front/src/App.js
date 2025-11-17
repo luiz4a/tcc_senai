@@ -3,6 +3,7 @@ import PaginaCadastro from './pages/Cadastro';
 import PaginaListaUsuarios from './pages/Lista';
 import PaginaBemVindo from './pages/Bemvindo';
 import PaginaTarefa from './pages/Tarefas';
+import AddTask from './pages/AdicionaTarefas';
 
 import './App.css'; // Para estilos globais, se necessário
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/usuarios" element={<PaginaListaUsuarios />} />
         <Route path="/tarefas" element={<PaginaTarefa />} />
         <Route path="/bemvindo" element={<PaginaBemVindo />} />
+        <Route path="/add-task" element={<AddTask />} />
         <Route path="/" element={<Navigate to="/bemvindo" replace />} />
 
       </Routes>

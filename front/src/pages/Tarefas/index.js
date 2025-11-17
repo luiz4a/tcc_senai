@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Adicione esta linha no topo para navegação
 import "./styles.css"; // Importa o CSS da página
 
 export default function Home() {
+  const navigate = useNavigate(); // Adicione esta linha dentro do componente para usar navegação
+
   const tasks = [
     { id: 1, title: "Estudar React", progress: 50, subtasks: 3 },
     { id: 2, title: "Projeto de Energia", progress: 10, subtasks: 1 },
@@ -20,32 +23,32 @@ export default function Home() {
           <div className="logo">LU</div>
           <div>
             <div className="titulo">LEVEL UP</div>
-            <div className="subtitulo">Seu painel</div>
+            <div className="subtitulo">Maria Dias</div>
           </div>
         </div>
 
         <nav className="menu">
           {[
             "Home",
-            "Adicionar Tarefa",
             "Metas",
             "Calendário",
-            "Pesquisa",
             "Categorias",
             "Modelos",
             "Lixeira",
             "Metas Diárias",
           ].map((item) => (
-            <a key={item} href="#" className="menu-item">
+            // Alterado de <a> para <button>
+            // Removido href="#"
+            // Adicionado type="button" (boas práticas)
+            <button key={item} type="button" className="menu-item">
               <span className="dot"></span>
               {item}
-            </a>
+            </button>
           ))}
         </nav>
 
         <div className="usuario">
-          <span className="label">Usuária</span>
-          <span className="nome">Maria Dias</span>
+          <span className="nome"></span>
         </div>
       </aside>
 
@@ -54,8 +57,11 @@ export default function Home() {
         <header className="topo">
           <h1>Minhas Tarefas</h1>
           <div className="acoes">
-            <input placeholder="Pesquisar" className="input-pesquisa" />
-            <button className="botao-nova">Nova</button>
+            {/* <input placeholder="Pesquisar" className="input-pesquisa" /> */}
+            {/* Modificação: Adicione onClick para navegar para a página de criação de tarefas */}
+            <button className="botao-nova" onClick={() => navigate('/add-task')}>
+              Adicionar Tarefa +
+            </button>
           </div>
         </header>
 
