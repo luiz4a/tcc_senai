@@ -119,14 +119,14 @@ export default function AddTask() {
                     <SelectValue placeholder="Selecione a categoria..." />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="treino">🏋️ Treino</SelectItem>
-                    <SelectItem value="livro">📚 Livro / Leitura</SelectItem>
-                    <SelectItem value="estudo">📖 Estudo</SelectItem>
-                    <SelectItem value="trabalho">💼 Trabalho</SelectItem>
-                    <SelectItem value="saude">🧘 Saúde</SelectItem>
-                    <SelectItem value="habito">⭐ Hábito</SelectItem>
-                    <SelectItem value="projeto">🚀 Projeto</SelectItem>
-                    <SelectItem value="pessoal">👤 Pessoal</SelectItem>
+                    <SelectItem value="treino">Treino</SelectItem>
+                    <SelectItem value="livro">Livro / Leitura</SelectItem>
+                    <SelectItem value="estudo">Estudo</SelectItem>
+                    <SelectItem value="trabalho">Trabalho</SelectItem>
+                    <SelectItem value="saude">Saúde</SelectItem>
+                    <SelectItem value="habito">Hábito</SelectItem>
+                    <SelectItem value="projeto"> Projeto</SelectItem>
+                    <SelectItem value="pessoal">Pessoal</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

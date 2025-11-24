@@ -7,36 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 280px;
-  background: linear-gradient(to bottom,#0f172a, #581c87, #581c87);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-}
-
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.logo {
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: -35px;
-  
-}
 
 .titulo {
   font-weight: 600;
@@ -187,6 +157,7 @@
 .cabecalho-card p {
   font-size: 12px;
   opacity: 0.7;
+  color: black;
 }
 
 .progresso {
@@ -208,7 +179,7 @@
   transition: width 0.4s ease;
 }
 
-.acoes-card {
+.metas-card {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
@@ -257,4 +228,130 @@
 */
 .botao-primario:hover {
   background: #ddd6fe; /* Um tom mais escuro que o #ede9fe original */
+}
+
+
+
+
+
+
+/* Botão de menu (três barrinhas) */
+.menu-toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #16213e;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+}
+
+
+/* Fundo escuro ao abrir */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 150;
+}
+
+
+/* Menu interno */
+.menu-item {
+  background: none;
+  border: none;
+  color: #ddd;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+.menu-item:hover {
+  background: #444;
+  color: white;
+}
+
+/* Bolinha decorativa */
+.dot {
+  width: 8px;
+  height: 8px;
+  background: orange;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/* === SIDEBAR COMPACTA === */
+.sidebar {
+  width: 200px;
+  background: linear-gradient(to bottom, #0f172a, #581c87);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  position: fixed;
+  top: 0;
+  left: -200px;   /* escondida */
+  height: 100vh;
+  transition: left 0.28s ease;
+  z-index: 999;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* === BOTÃO DA GAVETA === */
+.btn-open-menu {
+  position: fixed;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 70px;
+
+  background: #581c87;
+  color: white;
+  border: none;
+  border-radius: 0 12px 12px 0;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1200;
+
+  transition: left 0.28s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-open-menu:hover {
+  background: #6a22a3;
+}
+
+/* Botão acompanha quando sidebar abre */
+.btn-open-menu.sidebar-open {
+  left: 200px;
+}
+
+/* Ícones da seta */
+.btn-open-menu.open-icon::before {
+  content: "<";
+}
+
+.btn-open-menu.closed-icon::before {
+  content: ">";
 }
