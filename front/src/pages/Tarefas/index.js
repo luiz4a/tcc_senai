@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; 
-import "./styles.css";
+import styles from "./styles.module.css"; // CSS isolado
 
 export default function Home() {
   const navigate = useNavigate(); 
 
-  const [isOpen, setIsOpen] = React.useState(false); // controla o drawer
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const [tasks, setTasks] = React.useState(() => {
     const salvos = localStorage.getItem("minhasMetas");
@@ -22,99 +22,97 @@ export default function Home() {
   ];
 
   return (
-    <div className="levelup-container">
+    <div className={styles["levelup-container"]}>
 
-    <button
-  className={`btn-open-menu ${isOpen ? "open-icon sidebar-open" : "closed-icon"}`}
-  onClick={() => setIsOpen(!isOpen)}
-></button>
-      {/* BACKDROP (FECHA O MENU AO CLICAR FORA) */}
-      {isOpen && <div className="backdrop" onClick={() => setIsOpen(false)}></div>}
+      <button
+        className={`${styles["btn-open-menu"]} ${isOpen ? styles["open-icon"] + " " + styles["sidebar-open"] : styles["closed-icon"]}`}
+        onClick={() => setIsOpen(!isOpen)}
+      ></button>
 
-      {/* SIDEBAR GAVETA */}
-      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-header">
-          
+      {isOpen && <div className={styles.backdrop} onClick={() => setIsOpen(false)}></div>}
+
+      <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
+        <div className={styles["sidebar-header"]}>
           <div>
-            <div className="titulo">LEVEL UP</div>
-            <div className="subtitulo">Maria Dias</div>
+            <div className={styles.titulo}>LEVEL UP</div>
+            <div className={styles.subtitulo}>Maria Dias</div>
           </div>
         </div>
 
-        <nav className="menu">
+        <nav className={styles.menu}>
           {menuItems.map((item) => (
             <button 
               key={item.label} 
-              className="menu-item"
+              className={styles["menu-item"]}
               onClick={() => { 
                 navigate(item.path);
-                setIsOpen(false); // fechar menu ao navegar
+                setIsOpen(false);
               }}
             >
-              <span className="dot"></span>
+              <span className={styles.dot}></span>
               {item.label}
             </button>
           ))}
         </nav>
 
-        <div className="usuario">
-          <span className="nome">Maria Dias</span>
+        <div className={styles.usuario}>
+          <span className={styles.nome}>Maria Dias</span>
         </div>
       </aside>
 
-      {/* CONTEÚDO PRINCIPAL */}
-      <main className="conteudo">
-        <header className="topo">
+      <main className={styles.conteudo}>
+        <header className={styles.topo}>
           <h1>Minhas Tarefas</h1>
-          <div className="acoes">
-            <button className="botao-nova" onClick={() => navigate('/add-task')}>
+          <div className={styles.acoes}>
+            <button className={styles["botao-nova"]} onClick={() => navigate('/add-task')}>
               Adicionar Tarefa +
             </button>
           </div>
         </header>
 
-        {/* Estatísticas */}
-        <section className="estatisticas">
-          <div className="card-info">
+        <section className={styles.estatisticas}>
+          <div className={styles["card-info"]}>
             <span>Tarefas</span>
             <h2>{tasks.length}</h2>
           </div>
-          <div className="card-info">
+          <div className={styles["card-info"]}>
             <span>Progresso médio</span>
             <h2>{mediaProgresso}%</h2>
           </div>
-          <div className="card-info">
+          <div className={styles["card-info"]}>
             <span>Subtarefas</span>
             <h2>{tasks.reduce((s, t) => s + t.subtasks, 0)}</h2>
           </div>
         </section>
 
-        {/* Cards */}
-        <section className="tarefas">
+        <section className={styles.tarefas}>
           {tasks.map((t) => (
-            <div key={t.id} className="card-tarefa">
-              <div className="cabecalho-card">
+            <div key={t.id} className={styles["card-tarefa"]}>
+              <div className={styles["cabecalho-card"]}>
                 <div>
                   <h3>{t.title}</h3>
                   <p>{t.description}</p> 
                 </div>
-                <span className="progresso">{t.progress}%</span>
+                <span className={styles.progresso}>{t.progress}%</span>
               </div>
 
-              <div className="barra-progresso">
-                <div className="progresso-preenchido" style={{ width: `${t.progress}%` }}></div>
+              <div className={styles["barra-progresso"]}>
+                <div 
+                  className={styles["progresso-preenchido"]} 
+                  style={{ width: `${t.progress}%` }}
+                ></div>
               </div>
 
-              <div className="metas-card">
+              <div className={styles["metas-card"]}>
                 <button 
-                  className="botao-tarefas-livre" 
+                  className={styles["botao-tarefas-livre"]} 
                   onClick={() => navigate(`/editar-meta/${t.id}`)}
                 >
                   Editar
                 </button>
 
                 <button 
-                  className="botao-tarefas-livre"
+                  className={styles["botao-tarefas-livre"]}
                   style={{ background: '#ff4444', color: 'white' }}
                   onClick={() => {
                     if(window.confirm("Deletar esta meta?")) {

@@ -70,9 +70,7 @@ function PaginaBemvindo() {
               <span>Começar agora</span>
             </button>
             <button className="botao-sabermais">Saber mais</button>
-            <button onClick={() => navigate('/tarefas')} className="botao-tarefas-livre">
-              Acessar Gerenciador de Tarefas
-            </button>
+           
           </div>
 
           <div className="features">
