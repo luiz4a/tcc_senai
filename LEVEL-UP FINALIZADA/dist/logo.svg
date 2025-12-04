@@ -1,0 +1,47 @@
+<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gem/Crystal Shape -->
+  <defs>
+    <linearGradient id="gemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d946ef;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Gem -->
+  <g transform="translate(100, 80)">
+    <!-- Top Peak -->
+    <polygon points="0,-50 25,-10 -25,-10" fill="#c084fc" />
+    
+    <!-- Upper Left Face -->
+    <polygon points="-25,-10 -45,20 -15,30" fill="#a855f7" />
+    
+    <!-- Upper Right Face -->
+    <polygon points="25,-10 45,20 15,30" fill="#d946ef" />
+    
+    <!-- Left Face -->
+    <polygon points="-45,20 -35,50 -15,30" fill="#9333ea" />
+    
+    <!-- Right Face -->
+    <polygon points="45,20 35,50 15,30" fill="#c084fc" />
+    
+    <!-- Bottom Left -->
+    <polygon points="-15,30 -35,50 -10,70" fill="#7e22ce" />
+    
+    <!-- Bottom Right -->
+    <polygon points="15,30 35,50 10,70" fill="#a855f7" />
+    
+    <!-- Bottom Peak -->
+    <polygon points="-10,70 0,85 10,70" fill="#d946ef" />
+  </g>
+  
+  <!-- Up Arrow Left -->
+  <g transform="translate(50, 160)">
+    <polygon points="15,30 25,0 35,30 30,30 30,45 20,45 20,30" fill="#c084fc" />
+  </g>
+  
+  <!-- Up Arrow Right -->
+  <g transform="translate(130, 20)">
+    <polygon points="15,30 25,0 35,30 30,30 30,45 20,45 20,30" fill="#d946ef" />
+  </g>
+</svg>
