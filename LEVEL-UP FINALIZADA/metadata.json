@@ -1,0 +1,5 @@
+{
+  "name": "LevelUp - TCC Management System",
+  "description": "A complete management dashboard for Task, Goal, and Habit tracking. Designed for immediate presentation with simulated backend logic and persistent data.",
+  "requestFramePermissions": []
+}
